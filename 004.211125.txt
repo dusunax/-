@@ -1,0 +1,16 @@
+211125 study
+------------------------------------------------------------------------------
+
+- 스와이프 수정
+// 슬라이드 속도 speed: 1000
+// 슬라이드 동시에 넘기기(index잡기)
+            on:{ 
+                  activeIndexChange: functiong(){
+                     $("적용할 btn").eq(this.realIndex).trigger("click")
+                  }
+               }
+
+- 내일
+// 마지막 평가과제날: 월요일 종강
+// 005 index.html 모바일 wrap width 깨지는거 수정 필요
+// 005 about.html 반응형 작업중... menu list페이지까지 만들고 정보 넣기
