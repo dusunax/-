@@ -1,0 +1,40 @@
+211127 study
+------------------------------------------------------------------------------
+
+- 기업문화: 목표/공유/행동
+
+- 지도api // https://developers.kakao.com/tool
+            내 애플리케이션: 앱 추가
+                            플랫폼 추가
+                            웹, 사이트 도메인 추가
+                            앱 키 사용하기
+            javascript 키 연결:
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=///"></script>
+            => 지도api 커스텀 알아보기
+
+//오류
+- ftp-kr: No such file or directory?
+
+------------------------------------------------------------------------------
+> drop했을 때 복사 <
+create table hanshin_item (
+    seq_no int(10) not null auto_increment,
+    cate_no int(10) not null, 
+    src varchar(255) not null, 
+    png varchar(255) not null, 
+    price int(10) not null, 
+    name varchar(255) not null,
+
+    primary key(seq_no)
+);
+insert into hanshin_item value(, , ,);
+
+create table hanshin_store (
+    seq_no int(10) not null auto_increment,
+    city varchar(255) not null, 
+    store varchar(255) not null, 
+    addr varchar(255) not null,
+    telephone int(20) not null,
+
+    primary key(seq_no)
+);
