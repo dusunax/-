@@ -1,0 +1,18 @@
+211206 study
+------------------------------------------------------------------------------
+
+- git // ! [rejected] main -> main (fetch first)
+  터미널에서 git push origin +main으로 덮어써서 해결함
+  (소스트리에서 강제푸시 안됨)
+  소스트리 push할 때 가끔씩 에러가 난다😭
+=>  git 연습하기 learn git branching
+    https://learngitbranching.js.org/?locale=ko
+
+- 오늘 removeClass 두 개 붙여넣고 addClass가 안되는 거 찾고 있었음☠
+- dothome이랑 github.io는 시크릿모드 켜서 수정사항 확인하기
+  cafe24는 업데이트 바로바로 보임(유료라서 그럴까?)
+- 면접 안되면... 계속 이력서 넣으면서 서비스 만들어보자
+
+------------------------------------------------------------------------------
+- 감정 다이어리 / 색칠놀이
+    데일리: 월일/to do list/time table
