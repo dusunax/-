@@ -1,0 +1,98 @@
+211211 study
+------------------------------------------------------------------------------
+
+- 인프런 https://www.inflearn.com/ ☆
+- 코세라 https://www.coursera.org/
+- 에덱스 https://www.edx.org/
+
+- 프로그래머스 https://programmers.co.kr/ ☆
+
+- SQL퀴즈풀이
+    SELECT COUNT(ANIMAL_ID) count FROM ANIMAL_INS;
+    SELECT COUNT(DISTINCT NAME) count FROM ANIMAL_INS WHERE NAME IS NOT NULL;
+    SELECT ANIMAL_TYPE, COUNT(ANIMAL_ID) count from ANIMAL_INS group by ANIMAL_TYPE order by ANIMAL_TYPE;
+    
+    SELECT NAME, COUNT(NAME) count
+        from ANIMAL_INS where NAME IS NOT NULL
+        group by NAME
+        having count > 1 order by NAME;
+
+    SELECT HOUR(DATETIME) HOUR, COUNT(HOUR(DATETIME)) count
+        from ANIMAL_OUTS group by HOUR
+        having HOUR between 9 and 20
+        order by HOUR ;
+
+    set @time=-1;                       // -1에서 +1해서 0부터 시작
+    select @time:=@time+1 HOUR,         // ++하면서 비교
+        (
+            select COUNT(datetime)
+            from ANIMAL_OUTS
+            where @time=hour(datetime) 
+        ) COUNT
+    from ANIMAL_OUTS
+    where @time<23                      // 23
+    order by @time;                      // 0~23 정렬
+    
+    SELECT ANIMAL_OUTS.ANIMAL_ID, ANIMAL_OUTS.NAME //아웃의 ID, 아웃의 NAME
+        from ANIMAL_OUTS 	    // 아웃
+        left join ANIMAL_INS 	// 인하고 left join
+        using(ANIMAL_ID) 		// ID를 이용해서 using()
+        where ANIMAL_INS.ANIMAL_ID is NULL // ID가 NULL;
+
+    SELECT ANIMAL_INS.ANIMAL_ID, ANIMAL_INS.NAME // 기준(인). 아이디, 네임
+        from ANIMAL_INS			
+        left join ANIMAL_OUTS
+        using(ANIMAL_ID)
+        where ANIMAL_INS.DATETIME > ANIMAL_OUTS.DATETIME // 인이 아웃보다 이후
+        order by ANIMAL_INS.DATETIME;
+
+    SELECT ANIMAL_INS.NAME, ANIMAL_INS.DATETIME
+        from ANIMAL_INS
+        left join ANIMAL_OUTS
+        using(ANIMAL_ID)
+        where ANIMAL_OUTS.DATETIME is NULL // NULL
+        order by DATETIME
+        limit 3;                            // 3
+
+    SELECT ins.ANIMAL_ID, ins.ANIMAL_TYPE, ins.NAME
+        from ANIMAL_INS as ins                             // as ~
+        inner join ANIMAL_OUTS as outs                     // inner join ~ as ~
+        using(ANIMAL_ID)
+        where ins.SEX_UPON_INTAKE != outs.SEX_UPON_OUTCOME // !=
+        order by ins.ANIMAL_ID;
+
+    SELECT  ANIMAL_ID, NAME, SEX_UPON_INTAKE
+        from    ANIMAL_INS 
+        where   NAME IN (
+                    "Lucy", "Ella", "Pickle", "Rogan", "Sabrina", "Mitty"
+                )
+        order by ANIMAL_ID;
+
+    SELECT  ANIMAL_ID, NAME
+        from    ANIMAL_INS 
+        where   ANIMAL_TYPE="dog" and NAME like '%el%' // like '%el%'
+        order   by NAME;
+
+    SELECT ANIMAL_ID, NAME, if(
+            SEX_UPON_INTAKE like '%Neutered%' or SEX_UPON_INTAKE like '%Spayed%',"O","X"
+        ) "중성화"
+        from ANIMAL_INS
+        order by ANIMAL_ID;
+
+    SELECT ANIMAL_ID, NAME, if(
+            SEX_UPON_INTAKE like 'Intact%',"X","O"
+        ) "중성화"
+        from ANIMAL_INS
+        order by ANIMAL_ID;
+
+    SELECT ins.ANIMAL_ID, ins.NAME
+        from ANIMAL_INS as ins
+        join ANIMAL_OUTS as outs
+        on ins.ANIMAL_ID = outs.ANIMAL_ID
+        order by outs.DATETIME - ins.DATETIME DESC // 아웃 빼기 인 값 큰수부터
+        LIMIT 2
+
+    SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') as 날짜
+        from    ANIMAL_INS
+        order by ANIMAL_ID;
+        
