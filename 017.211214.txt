@@ -1,0 +1,17 @@
+211214 study
+------------------------------------------------------------------------------
+
+- 이미지는 용량문제로 jpg로 수정
+# 006
+practice building a interactive website🌱(for portfolio)
+{
+  goal: building a interactive webpage
+  do:   make images(frames) that link with S_top pxs // stopmotion
+  how:  use css variables
+        use vanilla JS
+        use github
+}
+
+- tweenmax: 라이브러리
+
+------------------------------------------------------------------------------
