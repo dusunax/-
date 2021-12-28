@@ -1,0 +1,25 @@
+211222-23 memo
+------------------------------------------------------------------------------
+
+- 자바스크립트
+    offsetTop(); = el.getBoundingClientRect().top + s_top
+
+- 클린코드
+    use configuration object({
+        type: "box",
+        qty: 2,
+        color: "red",
+        direction: "up",
+    })
+    boolean 보내지 않기(함수1=>액션1, if사용x)
+    축약하지 않기
+    코드를 짠 후 청소하기
+
+- jekyll
+    https://wowthemesnet.github.io/mediumish-theme-jekyll/
+    https://jekyllrb-ko.github.io/docs/step-by-step/01-setup/
+
+- DownGit // git 폴더째로 다운로드 
+    https://minhaskamal.github.io/DownGit/#/home
+
+------------------------------------------------------------------------------
